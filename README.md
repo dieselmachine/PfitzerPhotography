@@ -3,9 +3,11 @@
 
 View a live prototype of the site at https://pfitzer-photography.herokuapp.com.
 
-If you'd like to see the code for the prototype, make sure you are viewing the proto branch.
+The admin site is viewable by visiting the repository's [admin site wiki page](https://github.com/Xoadra/PfitzerPhotography/wiki/Admin-Site).
 
 **Please note:** The images used in the prototype website are neither mine nor Ursula's.
+
+If you'd like to see the code for the prototype, make sure you are viewing the proto branch.
 
 ---
 
@@ -15,7 +17,7 @@ The site uses both JavaScript and Python as a complete full-stack CMS solution. 
 
 ## Implementation
 
-The decision on technologies to use for this site came down to a number of factors.  On top of effectively meeting the client's needs, it was important to also seek out learning opportunities and build upon what I already know.  This is how the decision to build a dual-language app with React and Django came about.
+Deciding on the technologies to use for this site came down to a number of factors.  On top of effectively meeting the client's needs, it was important to also seek out learning opportunities and build upon what I already know.  This is how the decision to build a dual-language app with React and Django came about.
 
 Prior to building this website, I did not know React, but did know a bit about JavaScript and the Angular framework.  I learned React alongside working on this site and made significant use of React's wealth of features.  Redux was also incorporated into the site's architecture as well as server-side rendering which offered a unique and exciting experience tying React, Redux, Node.js, and Django together.
 
@@ -23,7 +25,21 @@ Choosing Django for the backend was due to two simple factors: I was already fam
 
 ## Architecture
 
-While the web app functions much like a typical SPA, there are a number of differences to be aware of beneath the surface.
+The website is divided into two sections: the public-facing site and the admin site.  Both address different needs and operate somewhat separately from one another, but both are affected by the content that is added by the admin user and work together as a digital showcase of artistic work.
+
+Below are a number of key architectural features, what they do, and how they work.  More information can be found by [checking out the wiki](https://github.com/Xoadra/PfitzerPhotography/wiki).
+
+### Content Management
+
+Creating user content for the website is done through the admin panel which is built out of Django's boilerplate admin site.  This is how content is added, changed, or removed from the site.  Examples of such user content include the backgrounds and self-description on the about page and gallery images in the gallery page.
+
+Viewing the admin site can be done through the [admin site walkthrough](https://github.com/Xoadra/PfitzerPhotography/wiki/Admin-Site) in the wiki.
+
+Further details on the code implementation of the admin site features will be added soon.
+
+### Server-Side Rendering
+
+While the web app functions much like a typical single page app, there are a number of differences to be aware of beneath the surface.
 
 Django first receives the request, fetches the relevent page data for SEO, and then makes a post request to the Node.js Express server to prerender the application on the server.  Here, additional data is preloaded alongside the server-rendered React app before all of it is sent back to Django where it is then sent to the browser to be rendered.
 
@@ -44,7 +60,7 @@ Broken down, here's what happens with links to relevant code samples:
 8. Prerendered [app](https://github.com/Xoadra/PfitzerPhotography/blob/c700841308e1af30f0e684893bc85428cf67b540/static/index.html#L26) and [data](https://github.com/Xoadra/PfitzerPhotography/blob/c700841308e1af30f0e684893bc85428cf67b540/static/index.html#L31) are hydrated and React takes over (see [/static/index.html](https://github.com/Xoadra/PfitzerPhotography/blob/master/static/index.html) and [/view/index.js](https://github.com/Xoadra/PfitzerPhotography/blob/master/view/index.js))
 9. Website viewing time!
 
-This process is explained in greater detail [in the wiki section on initial page loading](https://github.com/Xoadra/PfitzerPhotography/wiki/Initial-Load).
+This process is explained in greater detail [in the wiki section on server-side rendering](https://github.com/Xoadra/PfitzerPhotography/wiki/Server-Side-Rendering).
 
 ---
 
