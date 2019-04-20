@@ -1,19 +1,23 @@
 # Pfitzer Photography
-### Website Portfolio For Ursula Pfitzer's Industrial Photography
-
-View a live prototype of the site at https://pfitzer-photography.herokuapp.com.
-
-The admin site is viewable by visiting the repository's [admin site wiki page](https://github.com/Xoadra/PfitzerPhotography/wiki/Admin-Site).
-
-**Please note:** The images used in the prototype website are neither mine nor Ursula's.
-
-If you'd like to see the code for the prototype, make sure you are viewing the proto branch.
-
----
 
 Pfitzer Photography is a full-stack web application for displaying and advertising one's photography as a portfolio.  It is divided into two sections: the public-facing website itself and the admin site accessible with admin credentials for CMS purposes.
 
+View the [live prototype site on heroku](https://pfitzer-photography.herokuapp.com) or learn about the admin site in the [wiki's admin site page](https://github.com/Xoadra/PfitzerPhotography/wiki/Admin-Site).  Please note that the initial load of the site may be slow due to running on a free Heroku dyno.  The images used in the prototype website are neither mine nor Ursula's.
+
 The site uses both JavaScript and Python as a complete full-stack CMS solution.  React is used on the frontend to build out the UI, featuring SPA routing and asynchronous JavaScript for data fetching.  Django works most of the backend, providing the admin site that powers a variety of content management tools.  Server-side rendering is also implemented using a seperate Node.js process with Express to serve up the app with pre-loaded data.  A MySQL database is provisioned for content storage.
+
+**Note:** If you'd like to see the code for the prototype site, make sure you are viewing the proto branch.
+
+## Table of Contents
+
+More will be added to the table of contents as this document continues to fill out.
+
+* [Implementation](#implementation)
+* [Architecture](#architecture)
+  * [Content Management](#content-management)
+  * [Server-Side Rendering](#server-side-rendering)
+
+Feel free to also pay a visit to the [repo's wiki](https://github.com/Xoadra/PfitzerPhotography/wiki) if you'd like to learn more details about how the website operates.
 
 ## Implementation
 
